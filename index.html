@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>남윤아 — 나의 취향 아카이브</title>
+<meta name="description" content="작업할 때 한 가지 디자인 스타일에 머물지 않고 다른 스타일을 시도해 보는 사람">
+<meta property="og:type" content="website">
+<meta property="og:title" content="남윤아 — 나의 취향 아카이브">
+<meta property="og:description" content="작업할 때 한 가지 디자인 스타일에 머물지 않고 다른 스타일을 시도해 보는 사람">
+<meta property="og:image" content="assets/main.avif">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 첫 화면 헤드라인 전용 서체 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-time="night">
+<!-- 하늘의 원 하나 — 스크롤에 따라 달이 지고 해가 뜬다(sig.js) -->
+<div class="sky" aria-hidden="true"></div>
+
+<!-- 상단 메뉴 — Constant 규칙: 글자 링크는 왼쪽, 이름은 오른쪽, 아래 얇은 선. 아래로 스크롤하면 숨고 위로 올리면 나타남 -->
+<header class="hd" data-hd>
+  <div class="wrap hd-row">
+    <nav class="hd-nav" aria-label="장" lang="en">
+      <a href="#s2">Gaze</a>
+      <a href="#s3">People</a>
+      <a href="#s4">Spaces</a>
+      <a href="#s5">Objects</a>
+      <a href="#s6">Criteria</a>
+    </nav>
+    <a class="hd-name" href="#top">남윤아</a>
+  </div>
+</header>
+
+<!-- ① 첫 화면 — 화면 높이를 꽉 채운 사진 + 단어가 올라오는 영문 제목(Instrument Serif · 원문 "오래 곁에 두어 익숙해진 것들") + 오른쪽 반에 소개 문장 -->
+<section class="hero" id="top" data-theme="dark" data-time="night">
+  <img class="hero-img" src="assets/main.avif" width="2000" height="810" alt="첫 화면 사진 — 해 질 녘 강변 다리와 도시">
+  <div class="wrap hero-in">
+    <h1 class="hero-t" lang="en" data-reveal>Things Grown Familiar by My Side</h1>
+    <div class="hero-bottom">
+      <p class="hero-place">나의 취향 아카이브</p>
+      <p class="hero-lead">작업할 때 한 가지 디자인 스타일에 머물지 않고 다른 스타일을 시도해 보는 사람</p>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ② 1장 시선 — 어두운 구역: 하늘·손·길 세 묶음을 한 줄에 나란히(폰은 세로로). 묶음마다 4:3 사진 → 이름·한 줄 → 작은 사진 줄 → 고른 이유 -->
+  <section class="gaze" id="s2" data-time="night" aria-labelledby="s2-t">
+    <div class="wrap">
+      <header class="bar">
+        <h2 id="s2-t">1장 시선</h2>
+      </header>
+      <p class="gaze-lead" data-reveal>올려다보고, 맞잡고, 걸어가는 순간</p>
+
+      <div class="works">
+      <article class="work" data-work>
+        <div class="work-media"><img class="work-main" src="assets/w04_sky01_unsplash_unknown.avif" width="600" height="900" alt="1장 시선 하늘 사진 1"></div>
+        <div class="work-text">
+          <h3 class="work-t">하늘</h3>
+          <p class="work-when">불빛 없는 곳에서 올려다본 밤하늘</p>
+          <div class="thumbs">
+            <button type="button" class="is-on" aria-label="하늘 사진 1"><img src="assets/w04_sky01_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="하늘 사진 2"><img src="assets/w04_sky02_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="하늘 사진 3"><img src="assets/w04_sky03_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="하늘 사진 4"><img src="assets/w04_sky04_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="하늘 사진 5"><img src="assets/w04_sky05_unsplash_unknown.avif" alt=""></button>
+          </div>
+          <p class="work-why">올려다보면 내 고민이 작아지는 것 같아서</p>
+        </div>
+      </article>
+
+      <article class="work" data-work>
+        <div class="work-media"><img class="work-main" src="assets/w04_hands01_unsplash_unknown.avif" width="600" height="400" alt="1장 시선 손 사진 1"></div>
+        <div class="work-text">
+          <h3 class="work-t">손</h3>
+          <p class="work-when">누군가와 맞잡은 손</p>
+          <div class="thumbs">
+            <button type="button" class="is-on" aria-label="손 사진 1"><img src="assets/w04_hands01_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="손 사진 2"><img src="assets/w04_hands02_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="손 사진 3"><img src="assets/w04_hands03_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="손 사진 4"><img src="assets/w04_hands04_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="손 사진 5"><img src="assets/w04_hands05_unsplash_unknown.avif" alt=""></button>
+          </div>
+          <p class="work-why">혼자가 아니라는 게 손끝으로 느껴져서</p>
+        </div>
+      </article>
+
+      <article class="work" data-work>
+        <div class="work-media"><img class="work-main" src="assets/w04_road05_unsplash_unknown.avif" width="735" height="980" alt="1장 시선 길 사진 1"></div>
+        <div class="work-text">
+          <h3 class="work-t">길</h3>
+          <p class="work-when">건물 사이로 이어진 도시의 길</p>
+          <div class="thumbs">
+            <button type="button" class="is-on" aria-label="길 사진 1"><img src="assets/w04_road05_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="길 사진 2"><img src="assets/w04_road02_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="길 사진 3"><img src="assets/w04_road01_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="길 사진 4"><img src="assets/w04_road04_unsplash_unknown.avif" alt=""></button>
+            <button type="button" aria-label="길 사진 5"><img src="assets/w04_road03_unsplash_unknown.avif" alt=""></button>
+          </div>
+          <p class="work-why">건물 사이로 하늘이 열리는 순간이 좋아서</p>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 2장 사람 — 지그재그: 이유마다 한 줄, 사진(폭 272px 이하 — laugh1 원본 340px 기준)과 글이 좌우로 번갈아 -->
+  <section class="sec" id="s3" data-time="blue" aria-labelledby="s3-t">
+    <div class="wrap">
+      <h2 class="display" id="s3-t" lang="en" data-reveal>People</h2>
+      <p class="sub">2장 사람 · 김고은</p>
+      <p class="quote">나는 이 사람이 사진마다 다른 사람처럼 보이는데, 웃을 때는 늘 같은 사람이라서 좋다</p>
+
+      <div class="ppl">
+        <article class="ppl-item">
+          <figure class="ppl-fig"><a href="people.html#n1" data-cursor="보기" aria-label="2장 사람 이유 1 자세히"><img src="assets/w05_face1.jpg" width="596" height="785" style="--w: 596" alt="2장 사람 머리 모양마다 다른 얼굴 사진" loading="lazy"></a></figure>
+          <div class="ppl-text">
+            <p class="ppl-n">01</p>
+            <h3 class="ppl-t"><a href="people.html#n1">머리 모양마다 다른 얼굴</a></h3>
+            <p class="ppl-seen">작품마다 머리 길이를 바꿔, 숏컷부터 허리까지 오는 생머리까지 해 왔다.</p>
+            <p class="ppl-think">한 모습에 머무르지 않는 사람 같다.</p>
+          </div>
+        </article>
+        <article class="ppl-item">
+          <figure class="ppl-fig"><a href="people.html#n2" data-cursor="보기" aria-label="2장 사람 이유 2 자세히"><img src="assets/w05_laugh1.jpg" width="340" height="453" style="--w: 340" alt="2장 사람 웃을 땐 눈부터 웃는다 사진" loading="lazy"></a></figure>
+          <div class="ppl-text">
+            <p class="ppl-n">02</p>
+            <h3 class="ppl-t"><a href="people.html#n2">웃을 땐 눈부터 웃는다</a></h3>
+            <p class="ppl-seen">테니스복을 입은 사진에서 눈이 거의 감길 만큼 크게 웃고 있다.</p>
+            <p class="ppl-think">꾸미지 않은 웃음이라 보는 나도 편해진다.</p>
+          </div>
+        </article>
+        <article class="ppl-item">
+          <figure class="ppl-fig"><a href="people.html#n3" data-cursor="보기" aria-label="2장 사람 이유 3 자세히"><img src="assets/w05_redcarpet1.jpg" width="519" height="832" style="--w: 519" alt="2장 사람 옷보다 사람이 먼저 보인다 사진" loading="lazy"></a></figure>
+          <div class="ppl-text">
+            <p class="ppl-n">03</p>
+            <h3 class="ppl-t"><a href="people.html#n3">옷보다 사람이 먼저 보인다</a></h3>
+            <p class="ppl-seen">시상식 사진에서 하늘색 드레스를 입었는데, 드레스보다 차분한 표정이 먼저 눈에 들어온다.</p>
+            <p class="ppl-think">무엇을 입어도 자기 분위기로 만든다.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 3장 공간 — 7주 원래 사이트의 흩뿌림 레이아웃(weeks/07/site · W07-B 이식): 왼쪽 공간 목록(이름 · 한 줄 · More) | 오른쪽 작은 정사각 칸 밭(8열, 원래 무늬 그대로).
+       칸이 화면에 들어오면 가운데 점에서 펴지고, 칸에 마우스를 올리면 그 공간 이름 + 그 공간 칸만 밝게. 칸·이름·More 누르면 spaces.html(3장 서브페이지) -->
+  <section class="sec" id="s4" data-time="dawn" aria-labelledby="s4-t">
+    <div class="wrap">
+      <h2 class="display" id="s4-t" lang="en" data-reveal>Spaces</h2>
+      <p class="sub">3장 공간</p>
+      <p class="quote">세 곳 모두 혼자서 나에게 집중할 수 있는 곳이다</p>
+
+      <div class="sp">
+        <ul class="sp-list">
+        <li class="sp-item">
+          <a class="sp-name" href="spaces.html#space-1" data-space="0">작업 공간</a>
+          <p class="sp-when">디자인 작업</p>
+          <a class="sp-more" href="spaces.html#space-1" data-space="0">More</a>
+        </li>
+        <li class="sp-item">
+          <a class="sp-name" href="spaces.html#space-2" data-space="1">나만의 방</a>
+          <p class="sp-when">하루를 정리하기</p>
+          <a class="sp-more" href="spaces.html#space-2" data-space="1">More</a>
+        </li>
+        <li class="sp-item">
+          <a class="sp-name" href="spaces.html#space-3" data-space="2">카페</a>
+          <p class="sp-when">커피 마시며 쉬기</p>
+          <a class="sp-more" href="spaces.html#space-3" data-space="2">More</a>
+        </li>
+        </ul>
+        <div class="sp-field" aria-label="공간 사진">
+        <a class="sp-cell" href="spaces.html#space-1" data-cursor="보기" data-space="0" style="--dcs:1; --dc:4; --mcs:2; --mrs:1" aria-label="작업 공간 사진 1 — 공간 페이지로"><img src="assets/photo06/1/01.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">작업 공간</span></a>
+        <a class="sp-cell" href="spaces.html#space-1" data-cursor="보기" data-space="0" style="--dcs:2; --dc:5; --mcs:3; --mrs:1" aria-label="작업 공간 사진 2 — 공간 페이지로"><img src="assets/photo06/1/photo-1499750310107-5fef28a66643.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">작업 공간</span></a>
+        <a class="sp-cell" href="spaces.html#space-1" data-cursor="보기" data-space="0" style="--dcs:5; --dc:7; --mcs:1; --mrs:2" aria-label="작업 공간 사진 3 — 공간 페이지로"><img src="assets/photo06/1/photo-1504297050568-910d24c426d3.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">작업 공간</span></a>
+        <a class="sp-cell" href="spaces.html#space-1" data-cursor="보기" data-space="0" style="--dcs:7; --dc:8; --mcs:2; --mrs:2" aria-label="작업 공간 사진 4 — 공간 페이지로"><img src="assets/photo06/1/photo-1554232456-8727aae0cfa4.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">작업 공간</span></a>
+        <a class="sp-cell" href="spaces.html#space-1" data-cursor="보기" data-space="0" style="--dcs:2; --dc:5; --mcs:3; --mrs:3" aria-label="작업 공간 사진 5 — 공간 페이지로"><img src="assets/photo06/1/photo-1558274862-fb21bb917cd3.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">작업 공간</span></a>
+        <a class="sp-cell" href="spaces.html#space-1" data-cursor="보기" data-space="0" style="--dcs:4; --dc:6; --mcs:2; --mrs:4" aria-label="작업 공간 사진 6 — 공간 페이지로"><img src="assets/photo06/1/photo-1643267514395-b36b3f7e8281.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">작업 공간</span></a>
+        <a class="sp-cell" href="spaces.html#space-2" data-cursor="보기" data-space="1" style="--dcs:8; --dc:9; --mcs:1; --mrs:5" aria-label="나만의 방 사진 1 — 공간 페이지로"><img src="assets/photo06/2/01.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">나만의 방</span></a>
+        <a class="sp-cell" href="spaces.html#space-2" data-cursor="보기" data-space="1" style="--dcs:4; --dc:6; --mcs:2; --mrs:5" aria-label="나만의 방 사진 2 — 공간 페이지로"><img src="assets/photo06/2/photo-1731269482827-415ef9aa70c7.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">나만의 방</span></a>
+        <a class="sp-cell" href="spaces.html#space-2" data-cursor="보기" data-space="1" style="--dcs:5; --dc:7; --mcs:3; --mrs:6" aria-label="나만의 방 사진 3 — 공간 페이지로"><img src="assets/photo06/2/photo-1736667227621-a4e5cd08d866.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">나만의 방</span></a>
+        <a class="sp-cell" href="spaces.html#space-2" data-cursor="보기" data-space="1" style="--dcs:7; --dc:8; --mcs:2; --mrs:7" aria-label="나만의 방 사진 4 — 공간 페이지로"><img src="assets/photo06/2/photo-1758192261282-23491648a886.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">나만의 방</span></a>
+        <a class="sp-cell" href="spaces.html#space-2" data-cursor="보기" data-space="1" style="--dcs:2; --dc:5; --mcs:3; --mrs:7" aria-label="나만의 방 사진 5 — 공간 페이지로"><img src="assets/photo06/2/photo-1763203010608-35c916774032.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">나만의 방</span></a>
+        <a class="sp-cell" href="spaces.html#space-2" data-cursor="보기" data-space="1" style="--dcs:4; --dc:6; --mcs:2; --mrs:8" aria-label="나만의 방 사진 6 — 공간 페이지로"><img src="assets/photo06/2/premium_photo-1664302088394-15181999f92e.avif" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">나만의 방</span></a>
+        <a class="sp-cell" href="spaces.html#space-3" data-cursor="보기" data-space="2" style="--dcs:1; --dc:4; --mcs:2; --mrs:9" aria-label="카페 사진 1 — 공간 페이지로"><img src="assets/photo06/3/01.jpg" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">카페</span></a>
+        <a class="sp-cell" href="spaces.html#space-3" data-cursor="보기" data-space="2" style="--dcs:2; --dc:5; --mcs:3; --mrs:9" aria-label="카페 사진 2 — 공간 페이지로"><img src="assets/photo06/3/1d7f5f015c34eb4319dcf3415c638325.jpg" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">카페</span></a>
+        <a class="sp-cell" href="spaces.html#space-3" data-cursor="보기" data-space="2" style="--dcs:5; --dc:7; --mcs:1; --mrs:10" aria-label="카페 사진 3 — 공간 페이지로"><img src="assets/photo06/3/adaa2aa9272118487c060f625c85838b.jpg" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">카페</span></a>
+        <a class="sp-cell" href="spaces.html#space-3" data-cursor="보기" data-space="2" style="--dcs:7; --dc:8; --mcs:2; --mrs:10" aria-label="카페 사진 4 — 공간 페이지로"><img src="assets/photo06/3/afb0c066c27dce9ee4f33302806b58e6.jpg" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">카페</span></a>
+        <a class="sp-cell" href="spaces.html#space-3" data-cursor="보기" data-space="2" style="--dcs:2; --dc:5; --mcs:3; --mrs:11" aria-label="카페 사진 5 — 공간 페이지로"><img src="assets/photo06/3/d804ccbc6d74c0cdbaee1ff5b48f36b0.jpg" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">카페</span></a>
+        <a class="sp-cell" href="spaces.html#space-3" data-cursor="보기" data-space="2" style="--dcs:4; --dc:6; --mcs:2; --mrs:12" aria-label="카페 사진 6 — 공간 페이지로"><img src="assets/photo06/3/e8b53e9b371ae99a3aa3f11587b6db6e.jpg" alt="" loading="lazy" decoding="async"><span class="sp-cell-t" aria-hidden="true">카페</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ 4장 물건 — Constant 'Think' 카드: 정사각 사진 → 번호 → 세리프 이름 → 흐린 한 줄. 누르면 objects.html(4장 서브페이지) -->
+  <section class="sec" id="s5" data-time="morning" aria-labelledby="s5-t">
+    <div class="wrap">
+      <h2 class="display" id="s5-t" lang="en" data-reveal>Objects</h2>
+      <p class="sub">4장 물건</p>
+      <p class="quote">다섯 물건 모두 오래 써서 이제 내 몸처럼 익숙하다</p>
+
+      <div class="cards">
+        <article class="card">
+          <a class="card-btn" href="objects.html#obj-1" data-cursor="보기">
+            <span class="card-img"><img src="assets/obj1_01.jpg" alt="4장 물건 A5 스프링 노트 사진 1" loading="lazy"></span>
+            <span class="card-n">물건 1</span>
+            <span class="card-t">A5 스프링 노트</span>
+            <span class="card-when">떠오르는 생각을 적고 그림을 그린다</span>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card-btn" href="objects.html#obj-2" data-cursor="보기">
+            <span class="card-img"><img src="assets/obj2_01.jpg" alt="4장 물건 하얀 유선 이어폰 사진 1" loading="lazy"></span>
+            <span class="card-n">물건 2</span>
+            <span class="card-t">하얀 유선 이어폰</span>
+            <span class="card-when">등하굣길에 꽂고 음악을 듣는다</span>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card-btn" href="objects.html#obj-3" data-cursor="보기">
+            <span class="card-img"><img src="assets/obj3_01.jpg" alt="4장 물건 챙이 넓은 모자 사진 1" loading="lazy"></span>
+            <span class="card-n">물건 3</span>
+            <span class="card-t">챙이 넓은 모자</span>
+            <span class="card-when">햇빛이 센 날 챙을 내려 쓰고 걷는다</span>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card-btn" href="objects.html#obj-4" data-cursor="보기">
+            <span class="card-img"><img src="assets/obj4_01.jpg" alt="4장 물건 얇은 은테 안경 사진 1" loading="lazy"></span>
+            <span class="card-n">물건 4</span>
+            <span class="card-t">얇은 은테 안경</span>
+            <span class="card-when">노트북 앞에 앉을 때 꺼내 쓴다</span>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card-btn" href="objects.html#obj-5" data-cursor="보기">
+            <span class="card-img"><img src="assets/obj5_01.jpg" alt="4장 물건 매일 여는 노트북 사진 1" loading="lazy"></span>
+            <span class="card-n">물건 5</span>
+            <span class="card-t">매일 여는 노트북</span>
+            <span class="card-when">수업이 시작되면 펼쳐 작업한다</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ 기준이 쌓이는 자리 — 대제목 + 1px 선으로 나눈 줄: 왼쪽 장 이름 | 오른쪽 30px 기준 한 줄 -->
+  <section class="sec sec--last" id="s6" data-time="day" aria-labelledby="s6-t">
+    <div class="wrap">
+      <h2 class="display" id="s6-t" lang="en" data-reveal>Criteria</h2>
+      <p class="sub">기준이 쌓이는 자리</p>
+      <dl class="rows">
+        <div class="row"><dt>시선</dt><dd>나는 매일 보는 것에서 혼자가 아니라고 느끼는 순간을 고른다</dd></div>
+        <div class="row"><dt>사람</dt><dd>나는 꾸미지 않은 표정이 보이는 사람을 고른다</dd></div>
+        <div class="row"><dt>공간</dt><dd>나는 공간에서도 꾸미지 않은 나로 있을 수 있는 곳을 고른다</dd></div>
+        <!-- 물건 줄(7주 기준 한 줄)은 회고 뒤 이 자리에 채움 -->
+        <div class="row row--muted"><dt>고르지 않는 것</dt><dd>남의 시선이 계속 느껴지는 곳</dd><dd>반짝이고 색이 센 물건</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<!-- 푸터 — 어두운 바탕, 메뉴를 세로로 다시 나열 -->
+<footer class="ft" data-theme="dark">
+  <div class="wrap">
+    <!-- 맺음: 첫 화면 헤드라인을 다시 불러 처음과 끝을 잇는다 -->
+    <p class="ft-close" lang="en">Things Grown Familiar by My Side</p>
+    <div class="ft-top">
+      <p class="ft-name">남윤아</p>
+      <nav class="ft-nav" aria-label="장 다시 보기" lang="en">
+        <a href="#s2">Gaze</a><a href="#s3">People</a><a href="#s4">Spaces</a><a href="#s5">Objects</a><a href="#s6">Criteria</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p>사진 Unsplash · Pinterest · 매체 화보 — 개인 수업 과제용</p>
+      <p lang="en">©2026</p>
+    </div>
+  </div>
+</footer>
+
+
+<div class="cursor" aria-hidden="true"><span class="cursor-l"></span></div>
+
+<script src="sig.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

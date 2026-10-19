@@ -1,0 +1,245 @@
+/* 7주 아카이브 — Constant 시스템판
+   규칙 정본: weekly-site-kit/연습/추출_weareconstant/DESIGN.md
+   두 색 + 강조 하나(마우스 올릴 때만) · 굵기 하나 · 사각 모서리 · 1px 선과 여백으로만 구분 */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--t-bg);
+  color: var(--t-ink);
+  transition: background-color var(--dur-slow) ease-in-out, color var(--dur-slow) ease-in-out;
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--size-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-ko);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; letter-spacing: inherit; background: none; border: 0; cursor: pointer; text-align: left; }
+em { font-style: normal; }
+.serif { font-family: var(--font-display); }
+
+.wrap { max-width: var(--layout-max); margin: 0 auto; padding: 0 var(--space-gutter); }
+
+/* ── 상단 메뉴 ───────────────────────── */
+.hd {
+  position: fixed; inset: 0 0 auto; z-index: 50;
+  color: var(--t-ink);
+  transition: transform var(--dur-base) var(--ease-inout), color var(--dur-base) var(--ease-inout), background-color var(--dur-base) var(--ease-inout);
+}
+.hd-row { display: flex; justify-content: space-between; align-items: baseline; padding-top: 10px; padding-bottom: 8px; border-bottom: var(--line-width) solid var(--t-line); }
+.hd-nav { display: flex; gap: 1.1em; font-size: .9375rem; line-height: 1.05; letter-spacing: -0.03em; }
+.hd-nav a, .hd-name { transition: color 250ms var(--ease-inout); }
+.hd-nav a:hover, .hd-name:hover { color: var(--color-accent); }
+.hd-name { font-family: var(--font-display); font-size: .9375rem; line-height: 1; }
+.hd.is-solid { background: var(--t-bg); background: color-mix(in srgb, var(--t-bg) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.hd.is-dark { color: var(--color-night-ink); background: transparent; }
+.hd.is-dark .hd-row { border-color: rgba(255,255,255,.45); }
+.hd.is-dark.is-solid { background: rgba(21,19,15,.9); }
+.hd.is-hidden { transform: translateY(-110%); }
+
+/* ── 첫 화면 ───────────────────────── */
+.hero { position: relative; height: 100vh; height: 100svh; min-height: 520px; overflow: hidden; color: var(--color-night-ink); background: var(--color-night); }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* 맨 앞 그라데이션: 사진 아래 30%를 다음 구역 바탕(밤 #15130f)으로 서서히 물들여 경계선을 없앤다 */
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(21, 19, 15, 0) 68%, rgba(21, 19, 15, .55) 84%, rgba(21, 19, 15, .9) 94%, var(--color-night) 100%), radial-gradient(ellipse 60% 32% at 50% 50%, rgba(0,0,0,.32), rgba(0,0,0,0)), linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,0) 22%, rgba(0,0,0,0) 55%, rgba(0,0,0,.45)); }
+.hero-in { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: var(--space-gutter); }
+.hero-t { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); margin: 0 auto; padding: 0 var(--space-gutter); max-width: 16em; text-align: center; font-size: clamp(2.125rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.01em; font-weight: 400; font-family: "Instrument Serif", Georgia, serif; text-shadow: 0 1px 2px rgba(0,0,0,.25), 0 2px 28px rgba(0,0,0,.4); }
+.hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-gutter); margin-top: var(--space-block); }
+.hero-place { font-size: var(--size-small); letter-spacing: var(--tracking-small); }
+.hero-lead { width: calc(50% - 12px); font-size: var(--size-text-lg); line-height: 1.3; }
+
+/* ── 1장 시선 (바탕은 body 시간대 "밤") ───────────────────────── */
+.gaze { padding: var(--space-gutter) 0 var(--space-section); }
+.bar { display: flex; justify-content: space-between; align-items: baseline; padding-top: 10px; border-top: var(--line-width) solid var(--t-line); font-size: var(--size-h3); line-height: 1.2; }
+.bar h2 { font-size: inherit; font-weight: 400; }
+.gaze-lead { font-family: var(--font-display); font-size: clamp(1.375rem, 2.9vw, 2.25rem); line-height: 1.3; letter-spacing: -0.025em; margin: var(--space-block) 0; max-width: 14em; }
+
+/* 세 묶음 한 줄: 사진은 4:3 — 원본(대부분 폭 600px)보다 크게 늘어나지 않는 비율 */
+.works { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-gutter); }
+.work { display: flex; flex-direction: column; }
+.work-media { aspect-ratio: 4 / 3; background: var(--t-ph); overflow: hidden; }
+.work-main { width: 100%; height: 100%; object-fit: cover; transition: opacity var(--dur-base) var(--ease-inout); }
+.work-main.is-fading { opacity: 0; }
+.work-text { flex: 1; display: flex; flex-direction: column; margin-top: 12px; border-top: var(--line-width) solid var(--t-line); padding-top: 10px; }
+.work-t { font-size: clamp(1.25rem, 2vw, 1.5625rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 400; }
+.work-when { font-size: var(--size-text-lg); line-height: 1.4; margin-top: .35em; color: var(--t-sub); }
+.thumbs { display: flex; gap: 6px; margin-top: 16px; }
+.thumbs button { width: 48px; aspect-ratio: 1; overflow: hidden; opacity: .45; transition: opacity var(--dur-base) var(--ease-inout); }
+.thumbs button:hover, .thumbs button.is-on { opacity: 1; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.work-why { margin-top: auto; padding-top: 16px; }
+.work-why::before { content: "고른 이유"; display: block; font-size: var(--size-small); color: var(--t-muted); margin-bottom: .3em; padding-top: 10px; border-top: var(--line-width) solid var(--t-line); }
+
+/* ── 장 공통: 대제목 + 아래 설명 ───────────────────────── */
+.sec { padding-top: var(--space-section); }
+.sec--last { padding-bottom: var(--space-section-lg); }
+.display { font-size: var(--size-display); line-height: var(--leading-display); letter-spacing: var(--tracking-display); text-transform: uppercase; text-align: center; font-weight: 400; }
+.sub { text-align: center; margin-top: 14px; font-size: var(--size-small); color: var(--t-muted); letter-spacing: var(--tracking-small); }
+.quote { font-family: var(--font-display); font-size: clamp(1.375rem, 2.9vw, 2.25rem); line-height: 1.3; letter-spacing: -0.025em; text-align: center; max-width: 22em; margin: 1.1em auto 0; }
+
+/* ── 2장 사람: 지그재그 — 이유마다 한 줄, 사진과 글이 좌우로 번갈아 ─────────────────
+   사진마다 원본 ÷ 1.25까지(laugh1 272 · face1 476 · redcarpet 415) — 크기가 달라 지그재그에 리듬이 생기고, 늘어나지는 않는다 */
+.ppl { margin-top: var(--space-section); display: flex; flex-direction: column; gap: var(--space-block); }
+.ppl-item { display: grid; grid-template-columns: repeat(16, 1fr); column-gap: var(--space-gutter); align-items: center; padding-top: var(--space-gutter); border-top: var(--line-width) solid var(--t-line); }
+.ppl-fig { grid-column: 2 / span 6; width: 100%; }
+.ppl-fig a { display: block; }
+.ppl-fig img { max-width: calc(var(--w, 340) * 1px / 1.25); }
+.ppl-fig img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: var(--t-ph); }
+.ppl-text { grid-column: 9 / span 7; }
+.ppl-item:nth-child(even) .ppl-fig { grid-column: 10 / span 6; grid-row: 1; }
+.ppl-item:nth-child(even) .ppl-fig img { margin-left: auto; }
+.ppl-item:nth-child(even) .ppl-text { grid-column: 2 / span 8; grid-row: 1; }
+.ppl-n { font-size: var(--size-small); color: var(--t-muted); font-variant-numeric: tabular-nums; }
+.ppl-t { font-size: clamp(1.125rem, 1.7vw, 1.375rem); line-height: 1.25; letter-spacing: -0.02em; font-weight: 400; margin: .4em 0 .9em; }
+.ppl-seen { font-size: var(--size-text-xl); line-height: 1.5; letter-spacing: -0.02em; max-width: 30em; }
+.ppl-think { margin-top: 1.2em; padding-top: 10px; border-top: var(--line-width) solid var(--t-line); color: var(--t-sub); max-width: 30em; }
+.ppl-think::before { content: "생각"; display: block; font-size: var(--size-small); color: var(--t-muted); margin-bottom: .3em; }
+
+/* ── 3장 공간: 흩뿌린 칸 — 7주 원래 사이트(weeks/07/site · W07-B 이식) 레이아웃 그대로 ─────────────────
+   PC: 왼쪽 공간 목록(4/16) | 오른쪽 칸 밭(8열 · 칸 = 1열 정사각, 원래 무늬 --dcs). 폰: 목록 → 칸 밭 3열(원래 무늬 --mcs · --mrs) */
+.sp { margin-top: var(--space-section); display: grid; grid-template-columns: repeat(16, 1fr); column-gap: var(--space-gutter); align-items: start; --sc-t: .3s; --sc-stagger: 15ms; --sc-hover: 1.05; }
+.sp-list { grid-column: 1 / span 4; list-style: none; display: flex; flex-direction: column; gap: var(--space-block); }
+.sp-name { display: block; font-size: clamp(1.125rem, 1.7vw, 1.375rem); line-height: 1.25; letter-spacing: -0.02em; transition: color 250ms var(--ease-inout); }
+.sp-when { margin-top: .5em; color: var(--t-sub); }
+.sp-more { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 4px; font-size: var(--size-small); font-weight: 500; letter-spacing: 0; }
+.sp-more::after { content: "→"; transition: transform 250ms var(--ease-out); }
+@media (hover: hover) { .sp-more:hover::after { transform: translateX(6px); } .sp-name:hover { color: var(--color-accent); } }
+.sp-name, .sp-more { transition: opacity var(--sc-t) var(--ease-inout), color 250ms var(--ease-inout); }
+.sp.is-linking .sp-item:not(.is-hot) :is(.sp-name, .sp-more) { opacity: .72; }   /* 이름·More만 흐리게(대비 5:1 이상) — 한 줄 설명은 그대로 */
+.sp-field { grid-column: 6 / -1; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--space-gutter); grid-auto-flow: row; }
+.sp-cell { position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 1; overflow: visible; grid-column-start: var(--dcs, auto);
+  transition: transform var(--sc-t) var(--ease-inout), opacity var(--sc-t) var(--ease-inout); }
+.sp-cell::before { content: ""; position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--t-ink); }
+.sp-cell img { position: relative; width: 100%; height: 100%; object-fit: cover; background: var(--t-ph); transform: scale(var(--sc-s, 1));
+  transition: transform var(--sc-t) var(--ease-inout); transition-delay: calc(var(--dc, 1) * var(--sc-stagger)); }
+.sp.is-armed .sp-cell img { --sc-s: 0; }
+.sp.is-armed .sp-cell.is-in img { --sc-s: 1; }
+.sp-cell-t { position: absolute; left: 0; top: calc(100% + 6px); white-space: nowrap; font-size: var(--size-small); font-weight: 500; color: var(--t-ink); opacity: 0; pointer-events: none; transition: opacity 200ms var(--ease-inout); z-index: 2; }
+@media (hover: hover) { .sp-cell:hover { transform: scale(var(--sc-hover)); } }
+.sp-cell:hover .sp-cell-t, .sp-cell:focus-visible .sp-cell-t { opacity: 1; }
+.sp.is-linking .sp-cell { opacity: .25; }
+.sp.is-linking .sp-cell.is-hot { opacity: 1; transform: scale(var(--sc-hover)); }
+
+/* ── 4장 물건: 카드 ───────────────────────── */
+.cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-gutter); margin-top: var(--space-section); }
+.card-btn { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 15px 0; border-bottom: var(--line-width) solid var(--t-line); }
+.card-img { display: block; aspect-ratio: 1; overflow: hidden; background: var(--t-ph); }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) ease-in-out; }
+.card-btn:hover .card-img img { transform: scale(var(--hover-image-scale)); }
+.card-n { margin-top: .7em; font-size: var(--size-small); color: var(--t-muted); letter-spacing: var(--tracking-small); }
+.card-t { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.2; margin: .3em 0 1.4rem; transition: color var(--dur-fast) ease-out; }
+.card-btn:hover .card-t { color: var(--color-accent); }
+.card-when { margin-top: auto; font-size: var(--size-small); line-height: 1.4; color: var(--t-muted); letter-spacing: var(--tracking-small); }
+
+/* ── 기준 ───────────────────────── */
+.rows { margin-top: var(--space-section); border-top: var(--line-width) solid var(--t-line); }
+.row { display: grid; grid-template-columns: repeat(16, 1fr); column-gap: var(--space-gutter); padding: 18px 0 22px; border-bottom: var(--line-width) solid var(--t-line); }
+.row dt { grid-column: 1 / span 4; font-size: var(--size-small); color: var(--t-muted); padding-top: .4em; }
+.row dd { grid-column: 5 / span 12; font-size: var(--size-text-xl); line-height: 1.4; letter-spacing: -0.02em; }
+.row--muted dd { color: var(--t-muted); }
+.row dd + dd { margin-top: .3em; }
+
+/* ── 푸터 ───────────────────────── */
+.ft { background: var(--t-bg); color: var(--t-ink); padding: var(--space-gutter) 0; }
+.ft-close { padding: var(--space-block) 0 var(--space-block); font-family: "Instrument Serif", Georgia, serif; font-size: clamp(2.25rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -0.01em; color: var(--t-ink); }
+.ft-top { display: flex; gap: var(--space-gutter); padding-bottom: var(--space-section); }
+.ft-name { width: calc(25% - 18px); font-family: var(--font-display); font-size: var(--size-h3); line-height: 1; }
+.ft-nav { display: flex; flex-direction: column; gap: .35em; font-size: var(--size-h3); line-height: 1.2; letter-spacing: -0.03em; }
+.ft-nav a { transition: color 250ms var(--ease-inout); }
+.ft-nav a:hover { color: var(--color-accent); }
+.ft-bottom { display: flex; justify-content: space-between; gap: var(--space-gutter); padding-top: 10px; border-top: var(--line-width) solid var(--t-line); font-size: var(--size-small); letter-spacing: var(--tracking-small); color: var(--t-muted); }
+
+/* ── 단어 올라오기 ───────────────────────── */
+.js [data-reveal] .w { display: inline-block; overflow: hidden; vertical-align: top; padding-right: .05em; margin-bottom: -0.1em; }
+.js [data-reveal] .w > span { display: inline-block; transform: translateY(105%); opacity: 0; transition: transform var(--dur-reveal) var(--ease-out), opacity var(--dur-reveal) var(--ease-out); }
+.js .display[data-reveal] .w > span { transition-duration: 600ms; }
+.js [data-reveal].is-on .w > span { transform: none; opacity: 1; }
+
+/* ── 원형 커서 (마우스가 있는 기기만) ───────────────────────── */
+.cursor { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .cursor { display: flex; position: fixed; top: -50px; left: -50px; z-index: 90; width: 100px; height: 100px; border-radius: 50%; background: var(--color-accent); color: var(--color-ink); pointer-events: none; align-items: center; justify-content: center; font-size: var(--size-small); font-weight: 500; opacity: 0; transform: translate3d(-200px, -200px, 0) scale(.12); transition: opacity var(--dur-fast), transform 450ms var(--ease-out); }
+  .cursor.is-on { opacity: 1; }
+  .cursor-l { opacity: 0; transition: opacity var(--dur-fast); }
+  .cursor.is-big .cursor-l { opacity: 1; }
+}
+
+/* ── 배경: 사진이 걸치는 띠 + 하늘의 달·해 (2026-10-19) ─────────────────
+   참고: 사진을 색 띠에 걸치게 놓고, 구역 가장자리에 큰 원을 반쯤 들여 배경과 사진을 묶는 레이아웃.
+   규칙 — 띠는 사진 위쪽 60%에만 깔아 글자에 닿지 않는다. 원은 사진·글자 뒤(z-index -1)에만 둔다. */
+.gaze, .sec { position: relative; isolation: isolate; overflow-x: clip; }
+
+/* 1) 띠: 1장 세 사진 · 4장 카드 사진의 위쪽 60% 뒤 */
+.works, .cards { position: relative; }
+.works::before, .cards::before { content: ""; position: absolute; z-index: -1; left: 50%; width: 100vw; transform: translateX(-50%); background: var(--t-band); transition: background-color var(--dur-slow) ease-in-out; pointer-events: none; }
+.works::before { top: -48px; height: calc((min(100vw, 1560px) - 96px) / 4 * .6 + 48px); }
+.cards::before { top: -33px; height: calc((min(100vw, 1560px) - 144px) / 5 * .6 + 48px); }
+
+/* 2) 하늘의 원 하나: 화면에 고정, 스크롤에 따라 달이 오른쪽으로 지고 해가 왼쪽에서 떠오른다(위치·색·진하기는 sig.js).
+   구역 밖에 있어서 구역 경계에서 잘리지 않는다. 사진·글자 뒤(z-index -1)에만 그려진다.
+   달빛은 따뜻한 흰빛(240 230 210) · 진하기 상한 — 달 .18(밤 구역 위) · 해 .34(밝은 구역 위). 이 상한에서 모든 글자 대비 5:1 이상(2026-10-19 계산). */
+.sky { position: fixed; z-index: -1; left: 0; top: 0; width: var(--sky-size); aspect-ratio: 1; border-radius: 50%; pointer-events: none;
+  --sky-size: clamp(320px, 40vw, 600px); --sx: 75vw; --sy: 130vh; --sc: 240 230 210; --sa: 0;
+  transform: translate3d(calc(var(--sx) - 50%), calc(var(--sy) - 50%), 0);
+  background: radial-gradient(circle, rgb(var(--sc) / var(--sa)) 0 42%, rgb(var(--sc) / calc(var(--sa) * .4)) 60%, transparent 71%);
+  will-change: transform; }
+
+/* ── 좁은 화면 (764px 미만) ───────────────────────── */
+@media (max-width: 763px) {
+  :root { --space-gutter: 16px; --space-section: 5rem; --space-section-lg: 6rem; --space-block: 2.5rem; }
+  .hd-nav { gap: .8em; font-size: .8125rem; }
+  .hd-name { font-size: .8125rem; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; margin-top: 1.5rem; }
+  .hero-lead { width: 100%; font-size: var(--size-text-lg); }
+  .works { grid-template-columns: 1fr; row-gap: var(--space-block); }
+  .ppl-item, .ppl-item:nth-child(even) { grid-template-columns: 1fr; row-gap: var(--space-gutter); }
+  .ppl-fig, .ppl-text, .ppl-item:nth-child(even) .ppl-fig, .ppl-item:nth-child(even) .ppl-text { grid-column: 1; grid-row: auto; justify-self: start; }
+  .ppl-fig { max-width: 180px; }   /* 폰(화면 배율 2): laugh1 원본 340px ÷ 2 ≈ 170 — 거의 늘어나지 않게 */
+  .sp { grid-template-columns: 1fr; row-gap: var(--space-block); --sc-stagger: 50ms; }
+  .sp-list, .sp-field { grid-column: 1; }
+  .sp-list { gap: var(--space-gutter); }
+  .sp-field { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .sp-cell { grid-column-start: var(--mcs, auto); grid-row-start: var(--mrs, auto); }
+  .sp-cell img { transition-delay: calc(var(--mcs, 1) * var(--sc-stagger)); }
+  .sp-cell-t { display: none; }
+  .cards { grid-template-columns: repeat(2, 1fr); column-gap: 12px; }
+  .works::before, .cards::before { display: none; }
+  .sky { --sky-size: 280px; }
+  .row { grid-template-columns: 1fr; }
+  .row dt, .row dd { grid-column: 1 / -1; }
+  .row dt { padding-top: 0; margin-bottom: .3em; }
+  .ft-top { flex-direction: column; }
+  .ft-name { width: auto; }
+  .ft-bottom { flex-direction: column; gap: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-cell img { --sc-s: 1 !important; transform: none !important; }
+  .sp-cell:hover, .sp.is-linking .sp-cell.is-hot { transform: none; }
+  *, *::before, *::after { transition-duration: 1ms !important; scroll-behavior: auto !important; }
+  .js [data-reveal] .w > span { transform: none; opacity: 1; }
+}
+
+/* ── 사진이 걷히며 등장 (motion.js가 .reveal-ph를 붙인다) ─────────────────
+   clip-path로 아래→위 커튼, scale은 따로 두어 마우스 올림 확대(transform)와 부딪히지 않게 */
+.reveal-ph { clip-path: inset(100% 0 0 0); scale: 1.08; transition: clip-path 1000ms var(--ease-out) var(--rd, 0ms), scale 1400ms var(--ease-out) var(--rd, 0ms); }
+.reveal-ph.is-in { clip-path: inset(0 0 0 0); scale: 1; }
+
+/* ── 페이지 전환 막 (각 페이지 <head>의 한 줄 스크립트가 html에 veil-in과 --veil을 붙인다)
+   도착: 막이 덮인 채 시작해 CSS 애니메이션만으로 위로 걷힌다 — 스크립트가 실패해도 화면이 가려진 채 남지 않는다.
+   떠남: motion.js가 veil-leave를 붙이면 도착할 장의 색 막이 아래에서 올라와 덮는다. */
+html::after { content: ""; position: fixed; inset: 0; z-index: 300; background: var(--veil, #15130f); pointer-events: none; transform: translateY(-100%); }
+html.veil-in::after { animation: veil-up 900ms var(--ease-inout) 100ms both; }
+html.veil-leave::after { animation: veil-down 560ms var(--ease-inout) both; }
+@keyframes veil-up { from { transform: translateY(0); } to { transform: translateY(-100%); } }
+@keyframes veil-down { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ph { clip-path: none; scale: 1; transition: none; }
+  html.veil-in::after, html.veil-leave::after { animation: none; transform: translateY(-100%); }
+}

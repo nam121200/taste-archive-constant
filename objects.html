@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 페이지 전환 막: 그리기 전에 이 장의 시간대 색으로 덮고 시작(걷히는 건 style.css의 CSS 애니메이션) -->
+<script>(function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var p=location.pathname.split("/").pop()||"index.html",h={"#s3":"#201e1a","#s4":"#f1ede7","#s5":"#f6efe2","#s6":"#fdf5e3"},c={"people.html":"#201e1a","spaces.html":"#f1ede7","objects.html":"#f6efe2"}[p]||(p==="index.html"&&h[location.hash])||"#15130f";d.style.setProperty("--veil",c);d.classList.add("veil-in")})(document.documentElement)</script>
+<title>4장 물건 — 남윤아 취향 아카이브</title>
+<meta name="description" content="다섯 물건 모두 오래 써서 이제 내 몸처럼 익숙하다">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="sub.css">
+</head>
+<body class="subpage" data-time="morning">
+<div class="sky" aria-hidden="true" style="--sx: 20vw; --sy: 20vh; --sc: 255 204 142; --sa: .30"></div>
+<header class="hd" data-hd>
+  <div class="wrap hd-row">
+    <nav class="hd-nav" aria-label="장" lang="en">
+      <a href="index.html#s2">Gaze</a>
+      <a href="people.html">People</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="objects.html">Objects</a>
+      <a href="index.html#s6">Criteria</a>
+    </nav>
+    <a class="hd-name" href="index.html">남윤아</a>
+  </div>
+</header>
+
+<!-- 4장 물건 서브페이지 — 물건 도감: 위에 다섯 칸 목차, 물건마다 표본 카드(대표 사진) + 명세표(언제·어떻게 / 고른 이유 / 사진) + 나머지 사진.
+     문장 출처: weeks/07/01_topic.md 물건 1~5 · 취향축.md 7주 공통점·호불호 -->
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">← 메인으로</a><span>4장 물건 · Objects</span></p>
+    <header class="ob-hero">
+      <p class="kicker">손이 먼저 가는 다섯 가지</p><!-- Claude 제안 문구 -->
+      <h1 class="ob-title" data-reveal>곁에 두고 쓰는 물건</h1><!-- Claude 제안 문구 (첫 화면 관점 한 문장에서) -->
+      <p class="ob-common">다섯 물건 모두 오래 써서 이제 내 몸처럼 익숙하다</p>
+      <p class="ob-not">고르지 않는 것 — 반짝이고 색이 센 물건</p>
+    </header>
+
+    <ol class="ob-index">
+      <li><a href="#obj-1"><span class="n">No.01</span><span class="t">A5 스프링 노트</span><img src="assets/obj1_01.jpg" alt="" loading="lazy"></a></li>
+      <li><a href="#obj-2"><span class="n">No.02</span><span class="t">하얀 유선 이어폰</span><img src="assets/obj2_01.jpg" alt="" loading="lazy"></a></li>
+      <li><a href="#obj-3"><span class="n">No.03</span><span class="t">챙이 넓은 모자</span><img src="assets/obj3_01.jpg" alt="" loading="lazy"></a></li>
+      <li><a href="#obj-4"><span class="n">No.04</span><span class="t">얇은 은테 안경</span><img src="assets/obj4_01.jpg" alt="" loading="lazy"></a></li>
+      <li><a href="#obj-5"><span class="n">No.05</span><span class="t">매일 여는 노트북</span><img src="assets/obj5_01.jpg" alt="" loading="lazy"></a></li>
+    </ol>
+
+    <article class="spec" id="obj-1" aria-labelledby="obj-1-t">
+      <div class="spec-id rise">
+        <p class="spec-no">No.01</p>
+        <h2 class="spec-name" id="obj-1-t">A5 스프링 노트</h2>
+      </div>
+      <figure class="spec-card rise"><img class="ph" src="assets/obj1_01.jpg" width="735" height="504" style="--w: 735" alt="4장 물건 A5 스프링 노트 사진 1" loading="lazy"></figure>
+      <div class="spec-side rise">
+        <dl class="spec-table">
+          <div><dt>언제·어떻게</dt><dd>떠오르는 생각을 적고 그림을 그린다</dd></div>
+          <div><dt>고른 이유</dt><dd>A5라 가방에 넣고 어디든 들고 다녀서</dd></div>
+          <div><dt>사진</dt><dd>4장</dd></div>
+        </dl>
+        <div class="spec-more">
+          <img class="ph" src="assets/obj1_02.jpg" width="735" height="901" style="--w: 735" alt="4장 물건 A5 스프링 노트 사진 2" loading="lazy">
+          <img class="ph" src="assets/obj1_03.jpg" width="698" height="1039" style="--w: 698" alt="4장 물건 A5 스프링 노트 사진 3" loading="lazy">
+          <img class="ph" src="assets/obj1_04.jpg" width="735" height="898" style="--w: 735" alt="4장 물건 A5 스프링 노트 사진 4" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <article class="spec" id="obj-2" aria-labelledby="obj-2-t">
+      <div class="spec-id rise">
+        <p class="spec-no">No.02</p>
+        <h2 class="spec-name" id="obj-2-t">하얀 유선 이어폰</h2>
+      </div>
+      <figure class="spec-card rise"><img class="ph" src="assets/obj2_01.jpg" width="736" height="736" style="--w: 736" alt="4장 물건 하얀 유선 이어폰 사진 1" loading="lazy"></figure>
+      <div class="spec-side rise">
+        <dl class="spec-table">
+          <div><dt>언제·어떻게</dt><dd>등하굣길에 꽂고 음악을 듣는다</dd></div>
+          <div><dt>고른 이유</dt><dd>충전할 필요 없이 꽂기만 하면 돼서</dd></div>
+          <div><dt>사진</dt><dd>3장</dd></div>
+        </dl>
+        <div class="spec-more">
+          <img class="ph" src="assets/obj2_02.jpg" width="736" height="981" style="--w: 736" alt="4장 물건 하얀 유선 이어폰 사진 2" loading="lazy">
+          <img class="ph" src="assets/obj2_03.jpg" width="736" height="981" style="--w: 736" alt="4장 물건 하얀 유선 이어폰 사진 3" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <article class="spec" id="obj-3" aria-labelledby="obj-3-t">
+      <div class="spec-id rise">
+        <p class="spec-no">No.03</p>
+        <h2 class="spec-name" id="obj-3-t">챙이 넓은 모자</h2>
+      </div>
+      <figure class="spec-card rise"><img class="ph" src="assets/obj3_01.jpg" width="632" height="948" style="--w: 632" alt="4장 물건 챙이 넓은 모자 사진 1" loading="lazy"></figure>
+      <div class="spec-side rise">
+        <dl class="spec-table">
+          <div><dt>언제·어떻게</dt><dd>햇빛이 센 날 챙을 내려 쓰고 걷는다</dd></div>
+          <div><dt>고른 이유</dt><dd>챙이 넓어 얼굴을 다 가려 줘서</dd></div>
+          <div><dt>사진</dt><dd>3장</dd></div>
+        </dl>
+        <div class="spec-more">
+          <img class="ph" src="assets/obj3_02.jpg" width="400" height="600" style="--w: 400" alt="4장 물건 챙이 넓은 모자 사진 2" loading="lazy">
+          <img class="ph" src="assets/obj3_03.jpg" width="736" height="1104" style="--w: 736" alt="4장 물건 챙이 넓은 모자 사진 3" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <article class="spec" id="obj-4" aria-labelledby="obj-4-t">
+      <div class="spec-id rise">
+        <p class="spec-no">No.04</p>
+        <h2 class="spec-name" id="obj-4-t">얇은 은테 안경</h2>
+      </div>
+      <figure class="spec-card rise"><img class="ph" src="assets/obj4_01.jpg" width="736" height="736" style="--w: 736" alt="4장 물건 얇은 은테 안경 사진 1" loading="lazy"></figure>
+      <div class="spec-side rise">
+        <dl class="spec-table">
+          <div><dt>언제·어떻게</dt><dd>노트북 앞에 앉을 때 꺼내 쓴다</dd></div>
+          <div><dt>고른 이유</dt><dd>은색이라 어떤 옷에도 튀지 않아서</dd></div>
+          <div><dt>사진</dt><dd>2장</dd></div>
+        </dl>
+        <div class="spec-more">
+          <img class="ph" src="assets/obj4_02.jpg" width="1200" height="1200" style="--w: 1200" alt="4장 물건 얇은 은테 안경 사진 2" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <article class="spec" id="obj-5" aria-labelledby="obj-5-t">
+      <div class="spec-id rise">
+        <p class="spec-no">No.05</p>
+        <h2 class="spec-name" id="obj-5-t">매일 여는 노트북</h2>
+      </div>
+      <figure class="spec-card rise"><img class="ph" src="assets/obj5_01.jpg" width="345" height="613" style="--w: 345" alt="4장 물건 매일 여는 노트북 사진 1" loading="lazy"></figure>
+      <div class="spec-side rise">
+        <dl class="spec-table">
+          <div><dt>언제·어떻게</dt><dd>수업이 시작되면 펼쳐 작업한다</dd></div>
+          <div><dt>고른 이유</dt><dd>손에 익어 다른 걸 쓰면 낯설어서</dd></div>
+          <div><dt>사진</dt><dd>2장</dd></div>
+        </dl>
+        <div class="spec-more">
+          <img class="ph" src="assets/obj5_02.jpg" width="736" height="981" style="--w: 736" alt="4장 물건 매일 여는 노트북 사진 2" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <nav class="next" aria-label="다른 장">
+        <a href="spaces.html"><span class="kicker">← 이전 장</span><b>3장 공간</b></a>
+        <a href="index.html#s6"><span class="kicker">메인 →</span><b>기준이 쌓이는 자리</b></a>
+      </nav>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <!-- 맺음: 첫 화면 헤드라인을 다시 불러 처음과 끝을 잇는다 -->
+    <p class="ft-close" lang="en">Things Grown Familiar by My Side</p>
+    <div class="ft-top">
+      <p class="ft-name">남윤아</p>
+      <nav class="ft-nav" aria-label="장 다시 보기" lang="en">
+        <a href="index.html#s2">Gaze</a><a href="people.html">People</a><a href="spaces.html">Spaces</a><a href="objects.html">Objects</a><a href="index.html#s6">Criteria</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p>사진 Unsplash · Pinterest · 매체 화보 — 개인 수업 과제용</p>
+      <p lang="en">©2026</p>
+    </div>
+  </div>
+</footer>
+<script src="sub.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

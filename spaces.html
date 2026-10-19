@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 페이지 전환 막: 그리기 전에 이 장의 시간대 색으로 덮고 시작(걷히는 건 style.css의 CSS 애니메이션) -->
+<script>(function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var p=location.pathname.split("/").pop()||"index.html",h={"#s3":"#201e1a","#s4":"#f1ede7","#s5":"#f6efe2","#s6":"#fdf5e3"},c={"people.html":"#201e1a","spaces.html":"#f1ede7","objects.html":"#f6efe2"}[p]||(p==="index.html"&&h[location.hash])||"#15130f";d.style.setProperty("--veil",c);d.classList.add("veil-in")})(document.documentElement)</script>
+<title>3장 공간 — 남윤아 취향 아카이브</title>
+<meta name="description" content="세 곳 모두 혼자서 나에게 집중할 수 있는 곳이다">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="sub.css">
+</head>
+<body class="subpage" data-time="dawn">
+<div class="sky" aria-hidden="true" style="--sx: 16vw; --sy: 96vh; --sc: 255 188 150; --sa: .30"></div>
+<header class="hd" data-hd>
+  <div class="wrap hd-row">
+    <nav class="hd-nav" aria-label="장" lang="en">
+      <a href="index.html#s2">Gaze</a>
+      <a href="people.html">People</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="objects.html">Objects</a>
+      <a href="index.html#s6">Criteria</a>
+    </nav>
+    <a class="hd-name" href="index.html">남윤아</a>
+  </div>
+</header>
+
+<!-- 3장 공간 서브페이지 — 방 순례: 위에 방 탭이 고정되고, 방마다 번호·이름 + 인터뷰 세 질문 카드 + 사진 여섯 장을 원래 비율 그대로 3열 벽에 건다.
+     문장 출처: weeks/06/01_topic.md 인터뷰(공간 1~3 · 질문 2·3·4번) · weeks/07/02_plan.md 3장 공통점 -->
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">← 메인으로</a><span>3장 공간 · Spaces</span></p>
+    <header class="sx-hero">
+      <div class="sx-title-wrap" style="grid-column: 1 / span 10">
+        <p class="kicker">하루 중 혼자가 되고 싶을 때</p><!-- Claude 제안 문구 -->
+        <h1 class="sx-title" data-reveal>작업 공간, 나만의 방, 카페</h1><!-- Claude 제안 문구 -->
+      </div>
+      <p class="sx-quote">세 곳 모두 혼자서 나에게 집중할 수 있는 곳이다<br><span class="kicker">— 6주 기록에서</span></p>
+    </header>
+
+    <nav class="sx-tabs" aria-label="공간" data-spy>
+      <a href="#space-1"><span>01</span>작업 공간</a>
+      <a href="#space-2"><span>02</span>나만의 방</a>
+      <a href="#space-3"><span>03</span>카페</a>
+    </nav>
+
+    <section class="room" id="space-1" aria-labelledby="space-1-t">
+      <div class="room-head rise">
+        <p class="room-no" aria-hidden="true">01</p>
+        <h2 class="room-name" id="space-1-t">작업 공간</h2>
+        <div class="room-cards">
+          <div class="qcard"><span class="label">여기서 주로 하는 일</span><p>디자인 작업</p></div>
+          <div class="qcard"><span class="label">가장 오래 있고 싶을 때</span><p>집중이 필요한 때</p></div>
+          <div class="qcard"><span class="label">머물고 싶은 이유</span><p>여기 앉으면 바로 집중이 돼서</p></div>
+        </div>
+      </div>
+      <div class="wall">
+        <figure class="rise"><img class="ph" src="assets/photo06/1/01.avif" width="600" height="401" style="--w: 600" alt="3장 공간 작업 공간 사진 1" loading="lazy"><figcaption class="wall-note">대표 사진</figcaption></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/1/photo-1504297050568-910d24c426d3.avif" width="600" height="900" style="--w: 600" alt="3장 공간 작업 공간 사진 2" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/1/photo-1499750310107-5fef28a66643.avif" width="600" height="400" style="--w: 600" alt="3장 공간 작업 공간 사진 3" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/1/photo-1554232456-8727aae0cfa4.avif" width="600" height="800" style="--w: 600" alt="3장 공간 작업 공간 사진 4" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/1/photo-1558274862-fb21bb917cd3.avif" width="600" height="400" style="--w: 600" alt="3장 공간 작업 공간 사진 5" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/1/photo-1643267514395-b36b3f7e8281.avif" width="600" height="338" style="--w: 600" alt="3장 공간 작업 공간 사진 6" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="room" id="space-2" aria-labelledby="space-2-t">
+      <div class="room-head rise">
+        <p class="room-no" aria-hidden="true">02</p>
+        <h2 class="room-name" id="space-2-t">나만의 방</h2>
+        <div class="room-cards">
+          <div class="qcard"><span class="label">여기서 주로 하는 일</span><p>하루를 정리하기</p></div>
+          <div class="qcard"><span class="label">가장 오래 있고 싶을 때</span><p>혼자 있고 싶을 때</p></div>
+          <div class="qcard"><span class="label">머물고 싶은 이유</span><p>온전히 나로 있을 수 있어서</p></div>
+        </div>
+      </div>
+      <div class="wall">
+        <figure class="rise"><img class="ph" src="assets/photo06/2/01.avif" width="600" height="400" style="--w: 600" alt="3장 공간 나만의 방 사진 1" loading="lazy"><figcaption class="wall-note">대표 사진</figcaption></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/2/photo-1736667227621-a4e5cd08d866.avif" width="600" height="900" style="--w: 600" alt="3장 공간 나만의 방 사진 2" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/2/photo-1731269482827-415ef9aa70c7.avif" width="600" height="800" style="--w: 600" alt="3장 공간 나만의 방 사진 3" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/2/photo-1763203010608-35c916774032.avif" width="600" height="401" style="--w: 600" alt="3장 공간 나만의 방 사진 4" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/2/photo-1758192261282-23491648a886.avif" width="600" height="900" style="--w: 600" alt="3장 공간 나만의 방 사진 5" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/2/premium_photo-1664302088394-15181999f92e.avif" width="600" height="400" style="--w: 600" alt="3장 공간 나만의 방 사진 6" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="room" id="space-3" aria-labelledby="space-3-t">
+      <div class="room-head rise">
+        <p class="room-no" aria-hidden="true">03</p>
+        <h2 class="room-name" id="space-3-t">카페</h2>
+        <div class="room-cards">
+          <div class="qcard"><span class="label">여기서 주로 하는 일</span><p>커피 마시며 쉬기</p></div>
+          <div class="qcard"><span class="label">가장 오래 있고 싶을 때</span><p>머리를 비우고 싶을 때</p></div>
+          <div class="qcard"><span class="label">머물고 싶은 이유</span><p>일과 쉼 사이에 잠깐 멈출 수 있어서</p></div>
+        </div>
+      </div>
+      <div class="wall">
+        <figure class="rise"><img class="ph" src="assets/photo06/3/01.jpg" width="736" height="1104" style="--w: 736" alt="3장 공간 카페 사진 1" loading="lazy"><figcaption class="wall-note">대표 사진</figcaption></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/3/1d7f5f015c34eb4319dcf3415c638325.jpg" width="736" height="981" style="--w: 736" alt="3장 공간 카페 사진 2" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/3/adaa2aa9272118487c060f625c85838b.jpg" width="1200" height="1600" style="--w: 1200" alt="3장 공간 카페 사진 3" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/3/afb0c066c27dce9ee4f33302806b58e6.jpg" width="736" height="981" style="--w: 736" alt="3장 공간 카페 사진 4" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/3/d804ccbc6d74c0cdbaee1ff5b48f36b0.jpg" width="736" height="981" style="--w: 736" alt="3장 공간 카페 사진 5" loading="lazy"></figure>
+        <figure class="rise"><img class="ph" src="assets/photo06/3/e8b53e9b371ae99a3aa3f11587b6db6e.jpg" width="1080" height="1347" style="--w: 1080" alt="3장 공간 카페 사진 6" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <nav class="next" aria-label="다른 장">
+        <a href="people.html"><span class="kicker">← 이전 장</span><b>2장 사람 · 김고은</b></a>
+        <a href="objects.html"><span class="kicker">다음 장 →</span><b>4장 물건</b></a>
+      </nav>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <!-- 맺음: 첫 화면 헤드라인을 다시 불러 처음과 끝을 잇는다 -->
+    <p class="ft-close" lang="en">Things Grown Familiar by My Side</p>
+    <div class="ft-top">
+      <p class="ft-name">남윤아</p>
+      <nav class="ft-nav" aria-label="장 다시 보기" lang="en">
+        <a href="index.html#s2">Gaze</a><a href="people.html">People</a><a href="spaces.html">Spaces</a><a href="objects.html">Objects</a><a href="index.html#s6">Criteria</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p>사진 Unsplash · Pinterest · 매체 화보 — 개인 수업 과제용</p>
+      <p lang="en">©2026</p>
+    </div>
+  </div>
+</footer>
+<script src="sub.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

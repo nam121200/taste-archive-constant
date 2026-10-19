@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 페이지 전환 막: 그리기 전에 이 장의 시간대 색으로 덮고 시작(걷히는 건 style.css의 CSS 애니메이션) -->
+<script>(function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var p=location.pathname.split("/").pop()||"index.html",h={"#s3":"#201e1a","#s4":"#f1ede7","#s5":"#f6efe2","#s6":"#fdf5e3"},c={"people.html":"#201e1a","spaces.html":"#f1ede7","objects.html":"#f6efe2"}[p]||(p==="index.html"&&h[location.hash])||"#15130f";d.style.setProperty("--veil",c);d.classList.add("veil-in")})(document.documentElement)</script>
+<title>2장 사람 · 김고은 — 남윤아 취향 아카이브</title>
+<meta name="description" content="나는 이 사람이 사진마다 다른 사람처럼 보이는데, 웃을 때는 늘 같은 사람이라서 좋다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="sub.css">
+</head>
+<body class="subpage" data-time="blue">
+<div class="sky" aria-hidden="true" style="--sx: 80vw; --sy: 24vh; --sc: 240 230 210; --sa: .18"></div>
+<header class="hd" data-hd>
+  <div class="wrap hd-row">
+    <nav class="hd-nav" aria-label="장" lang="en">
+      <a href="index.html#s2">Gaze</a>
+      <a href="people.html">People</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="objects.html">Objects</a>
+      <a href="index.html#s6">Criteria</a>
+    </nav>
+    <a class="hd-name" href="index.html">남윤아</a>
+  </div>
+</header>
+
+<!-- 2장 사람 서브페이지 — 인물 노트: 왼쪽 프로필(이름·내 한 문장·소개·목차)이 고정되고, 오른쪽에서 이유 세 개가 노트처럼 흐른다.
+     문장 출처: weeks/07/02_plan.md 2장 사람 칸(이름·영문 이름·역할·내 한 문장·소개 두 줄·이유 셋·가져올 한 가지) -->
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">← 메인으로</a><span>2장 사람 · People</span></p>
+    <div class="pp">
+      <aside class="pp-side">
+        <p class="kicker">세 장의 사진, 세 가지 이유</p><!-- Claude 제안 문구 -->
+        <h1 class="pp-name" data-reveal>김고은</h1>
+        <p class="pp-en"><span lang="en">Kim Go Eun</span> · 배우</p>
+        <p class="pp-mine">나는 이 사람이 사진마다 다른 사람처럼 보이는데, 웃을 때는 늘 같은 사람이라서 좋다.</p>
+        <p class="pp-intro">이 사람의 사진 스물세 장을 모아 보았다.<br>화보·시상식·일상 사진에서 직접 본 것만 적었다.</p>
+        <ol class="pp-toc" data-spy>
+          <li><a href="#n1"><span>01</span>머리 모양마다 다른 얼굴</a></li>
+          <li><a href="#n2"><span>02</span>웃을 땐 눈부터 웃는다</a></li>
+          <li><a href="#n3"><span>03</span>옷보다 사람이 먼저 보인다</a></li>
+        </ol>
+      </aside>
+
+      <div class="pp-notes">
+        <article class="note rise" id="n1">
+          <span class="note-no" aria-hidden="true">01</span>
+          <figure class="note-fig"><img class="ph" src="assets/w05_face1.jpg" width="596" height="785" style="--w: 596" alt="2장 사람 머리 모양마다 다른 얼굴 사진" loading="lazy"></figure>
+          <div class="note-text">
+            <h2 class="note-t">머리 모양마다 다른 얼굴</h2>
+            <p class="note-seen"><span class="label">본 것</span>작품마다 머리 길이를 바꿔, 숏컷부터 허리까지 오는 생머리까지 해 왔다.</p>
+            <p class="note-think"><span class="label">그래서</span>한 모습에 머무르지 않는 사람 같다.</p>
+          </div>
+        </article>
+        <article class="note rise" id="n2">
+          <span class="note-no" aria-hidden="true">02</span>
+          <figure class="note-fig"><img class="ph" src="assets/w05_laugh1.jpg" width="340" height="453" style="--w: 340" alt="2장 사람 웃을 땐 눈부터 웃는다 사진" loading="lazy"></figure>
+          <div class="note-text">
+            <h2 class="note-t">웃을 땐 눈부터 웃는다</h2>
+            <p class="note-seen"><span class="label">본 것</span>테니스복을 입은 사진에서 눈이 거의 감길 만큼 크게 웃고 있다.</p>
+            <p class="note-think"><span class="label">그래서</span>꾸미지 않은 웃음이라 보는 나도 편해진다.</p>
+          </div>
+        </article>
+        <article class="note rise" id="n3">
+          <span class="note-no" aria-hidden="true">03</span>
+          <figure class="note-fig"><img class="ph" src="assets/w05_redcarpet1.jpg" width="519" height="832" style="--w: 519" alt="2장 사람 옷보다 사람이 먼저 보인다 사진" loading="lazy"></figure>
+          <div class="note-text">
+            <h2 class="note-t">옷보다 사람이 먼저 보인다</h2>
+            <p class="note-seen"><span class="label">본 것</span>시상식 사진에서 하늘색 드레스를 입었는데, 드레스보다 차분한 표정이 먼저 눈에 들어온다.</p>
+            <p class="note-think"><span class="label">그래서</span>무엇을 입어도 자기 분위기로 만든다.</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+    <section class="pp-take rise" aria-label="가져올 한 가지">
+      <span class="label">이 사람에게서 가져올 한 가지</span>
+      <p>작업할 때 한 가지 모습에 머물지 않고 다른 얼굴을 시도해 본다.</p>
+    </section>
+    <nav class="next" aria-label="다른 장">
+        <a href="index.html#s2"><span class="kicker">← 메인</span><b>1장 시선</b></a>
+        <a href="spaces.html"><span class="kicker">다음 장 →</span><b>3장 공간</b></a>
+      </nav>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <!-- 맺음: 첫 화면 헤드라인을 다시 불러 처음과 끝을 잇는다 -->
+    <p class="ft-close" lang="en">Things Grown Familiar by My Side</p>
+    <div class="ft-top">
+      <p class="ft-name">남윤아</p>
+      <nav class="ft-nav" aria-label="장 다시 보기" lang="en">
+        <a href="index.html#s2">Gaze</a><a href="people.html">People</a><a href="spaces.html">Spaces</a><a href="objects.html">Objects</a><a href="index.html#s6">Criteria</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p>사진 Unsplash · Pinterest · 매체 화보 — 개인 수업 과제용</p>
+      <p lang="en">©2026</p>
+    </div>
+  </div>
+</footer>
+<script src="sub.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

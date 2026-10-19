@@ -1,0 +1,110 @@
+/* 7주 아카이브 — Constant 시스템판 토큰
+   원본: weekly-site-kit/연습/추출_weareconstant/tokens.css
+   바꾼 것: 한글 자간을 -0.02em 안팎으로 완화(영문 대제목만 원본 -0.033em 유지) */
+:root {
+  /* 색 */
+  --color-bg: #ffffff;
+  --color-ink: #1e1e1e;
+  --color-ink-inverse: #ffffff;
+  --color-muted: #808080;
+  --color-muted-light: #a5a5a5;
+  --color-line: #d8d8d8;
+  --color-line-dark: #6c6c6c;
+  --color-accent: #f36e5d;
+  --color-placeholder: #ecebe6;
+  --color-night: #15130f;   /* 따뜻한 밤 — 2026-10-20 (남색 #11141b → 중립 #141414 → 지금) */
+  --color-night-ink: #ece8df;
+
+  /* 서체 — Pretendard 하나로 통일 (원본 akzidenz-grotesk / Ivar Display는 유료) */
+  --font-body: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-body); /* 2026-10-19 서체 통일 — 세리프 포인트 없앰 */
+  --weight-body: 400;
+
+  /* 글자 크기 */
+  --size-display: clamp(3.125rem, 14vw, 10rem);   /* 160px (원래 180px) */
+  --size-h1: clamp(2rem, 5vw, 3.375rem);            /* 54px (원래 60px) */
+  --size-h2: clamp(1.25rem, 2.3vw, 1.6875rem);     /* 27px (원래 30px) */
+  --size-h3: clamp(1rem, 1.8vw, 1.3125rem);         /* 21px (원래 24px) */
+  --size-text-xl: clamp(1rem, 1.45vw, 1.1875rem);  /* 19px — 펼침 목록·기준 줄 본문 */
+  --size-text-lg: clamp(.9375rem, 1.2vw, 1rem);    /* 16px — 한 줄 설명·고른 이유 */
+  --size-body: .9375rem;                           /* 15px */
+  --size-small: .75rem;                            /* 12px */
+  --leading-display: 0.9;
+  --leading-heading: 1.2;
+  --leading-body: 1.5;
+  --tracking-display: -0.033em;
+  --tracking-ko: -0.02em;
+  --tracking-small: -0.01em;
+
+  /* 간격 · 칸 */
+  --space-gutter: 24px;
+  --space-block: 4rem;          /* 64px */
+  --space-section: 7.5rem;      /* 120px */
+  --space-section-lg: 9.375rem; /* 150px */
+  --layout-max: 1560px;
+  --radius: 0;
+  --line-width: 1px;
+
+  /* 움직임 */
+  --ease-inout: cubic-bezier(.455, .03, .515, .955);
+  --ease-out: cubic-bezier(.215, .61, .355, 1);
+  --dur-fast: 200ms;
+  --dur-base: 400ms;
+  --dur-reveal: 500ms;
+  --dur-slow: 1000ms;
+  --hover-image-scale: 1.02;
+}
+
+/* ── 시간대 배경 (2026-10-19) ─────────────────
+   스크롤하면 화면 가운데 구역의 data-time에 따라 body가 1초에 걸쳐 바뀐다(sig.js).
+   밤(첫 화면·1장) → 조금 밝은 밤(2장) → 새벽(3장) → 아침 종이(4장) → 낮(기준).
+   --t-bg 바탕 · --t-ink 글자 · --t-sub 한 단계 흐린 글자 · --t-muted 회색 글자 · --t-line 1px 선 · --t-ph 사진 자리 · --t-band 사진이 걸치는 띠(반투명 — 뒤로 지나가는 달·해가 비친다) */
+body,
+body[data-time="night"],
+.ft, .lb {
+  --t-bg: var(--color-night);
+  --t-ink: var(--color-night-ink);
+  --t-sub: rgba(236, 232, 223, .78);
+  --t-muted: #b0aba2;
+  --t-line: rgba(236, 232, 223, .18);
+  --t-ph: #211e18;
+  --t-band: rgba(236, 232, 223, .045);
+}
+body[data-time="blue"] {
+  --t-bg: #201e1a;   /* 2장 — 1장보다 한 단계 밝고 따뜻한 밤 (원래 푸른 밤 #1c2330) */
+  --t-ink: var(--color-night-ink);
+  --t-sub: rgba(236, 232, 223, .8);
+  --t-muted: #c4bfb5;
+  --t-line: rgba(236, 232, 223, .2);
+  --t-ph: #2b2823;
+  --t-band: rgba(236, 232, 223, .05);
+}
+/* 새벽 → 아침 → 낮: 여기서부터 따뜻한 쪽으로 들어가, 내려갈수록 조금씩 더 밝고 더 따뜻해진다 (2026-10-19)
+   Lab 기준 밝기 L* 93.9 → 94.7 → 96.7 · 따뜻함 b* 3.4 → 7.1 → 9.6. 글자는 따뜻한 먹(#1f1d1b) · 따뜻한 회색 */
+body[data-time="dawn"] {
+  --t-bg: #f1ede7;
+  --t-ink: #1f1d1b;
+  --t-sub: rgba(31, 29, 27, .8);
+  --t-muted: #5c5650;
+  --t-line: rgba(31, 29, 27, .14);
+  --t-ph: #e4dfd7;
+  --t-band: rgba(31, 29, 27, .04);
+}
+body[data-time="morning"] {
+  --t-bg: #f6efe2;
+  --t-ink: #1f1d1b;
+  --t-sub: rgba(31, 29, 27, .8);
+  --t-muted: #5a544a;
+  --t-line: rgba(31, 29, 27, .14);
+  --t-ph: #ebe3d4;
+  --t-band: rgba(31, 29, 27, .045);
+}
+body[data-time="day"] {
+  --t-bg: #fdf5e3;
+  --t-ink: #1f1d1b;
+  --t-sub: rgba(31, 29, 27, .8);
+  --t-muted: #5b5448;
+  --t-line: rgba(31, 29, 27, .15);
+  --t-ph: #f1e8d5;
+  --t-band: rgba(31, 29, 27, .035);
+}
