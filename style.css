@@ -225,10 +225,6 @@ em { font-style: normal; }
   .js [data-reveal] .w > span { transform: none; opacity: 1; }
 }
 
-/* ── 사진이 걷히며 등장 (motion.js가 .reveal-ph를 붙인다) ─────────────────
-   clip-path로 아래→위 커튼, scale은 따로 두어 마우스 올림 확대(transform)와 부딪히지 않게 */
-.reveal-ph { clip-path: inset(100% 0 0 0); scale: 1.08; transition: clip-path 1000ms var(--ease-out) var(--rd, 0ms), scale 1400ms var(--ease-out) var(--rd, 0ms); }
-.reveal-ph.is-in { clip-path: inset(0 0 0 0); scale: 1; }
 
 /* ── 페이지 전환 막 (각 페이지 <head>의 한 줄 스크립트가 html에 veil-in과 --veil을 붙인다)
    도착: 막이 덮인 채 시작해 CSS 애니메이션만으로 위로 걷힌다 — 스크립트가 실패해도 화면이 가려진 채 남지 않는다.
@@ -240,6 +236,5 @@ html.veil-leave::after { animation: veil-down 560ms var(--ease-inout) both; }
 @keyframes veil-down { from { transform: translateY(100%); } to { transform: translateY(0); } }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal-ph { clip-path: none; scale: 1; transition: none; }
   html.veil-in::after, html.veil-leave::after { animation: none; transform: translateY(-100%); }
 }

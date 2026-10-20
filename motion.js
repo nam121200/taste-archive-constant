@@ -1,5 +1,5 @@
 /* 네 페이지 공통 움직임 (2026-10-20)
-   1) 사진이 걷히며 등장 — 화면에 들어오면 아래에서 위로 커튼이 걷히고, 살짝 크게 시작해 제 크기로 (한 번만)
+   1) (뺌) 사진 커튼 걷힘 — 메인·서브 모두 없음
    2) 페이지 전환 — 서브페이지로 갈 때 도착할 장의 시간대 색 막이 아래에서 올라와 덮고 넘어간다.
       메인(index.html)에는 쓰지 않는다: 메인에 도착할 때도, 메인으로 갈 때도 막 없음.
       도착한 페이지에서는 막이 위로 걷힌다(그쪽은 CSS만으로 걷히므로 이 파일이 안 불려도 화면이 가려진 채 남지 않는다). */
@@ -7,32 +7,7 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const root = document.documentElement;
 
-  // ── 1) 사진이 걷히며 등장
-  // 3장 칸 밭(.sp-cell)은 자체 '펴짐'이 있어 뺀다. 같은 무리 안에서는 80ms씩 차례로.
-  const groups = [
-    // 메인 1·2·4장 사진은 커튼 대신 '아래에서 약하게 떠오르기'(아래 1-2)를 쓴다 — 2026-10-20
-    '.note-fig .ph',              // 사람 서브
-    '.wall .ph',                  // 공간 서브
-    '.spec-card .ph', '.spec-more .ph', '.ob-index img'  // 물건 서브
-  ];
-  // 커튼(clip-path)으로 완전히 가려진 사진은 '안 보임'으로 잡히므로, 사진이 아니라 사진을 감싼 칸을 지켜본다
-  if (!reduce && 'IntersectionObserver' in window) {
-    const owner = new Map();
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      (owner.get(e.target) || []).forEach(img => img.classList.add('is-in'));
-      io.unobserve(e.target);
-    }), { rootMargin: '0px 0px -8% 0px' });
-    groups.forEach(sel => {
-      document.querySelectorAll(sel).forEach((img, i) => {
-        img.classList.add('reveal-ph');
-        img.style.setProperty('--rd', (i % 6) * 80 + 'ms');
-        const box = img.parentElement;
-        if (!owner.has(box)) { owner.set(box, []); io.observe(box); }
-        owner.get(box).push(img);
-      });
-    });
-  }
+  // ── 1) 사진 커튼 걷힘은 2026-10-20에 메인·서브 모두에서 뺐다(사진은 처음부터 보인다)
 
   // ── 1-2) 메인 1·2·4장: 휠을 내리는 만큼 글은 제자리로 떠오르고, 사진은 조금 천천히 따라온다 (2026-10-20)
   //    글: 화면 아래로 들어올 때 32px 아래 → 화면 70% 높이에서 제자리(되돌리면 다시 내려감)
