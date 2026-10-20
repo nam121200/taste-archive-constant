@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 페이지 전환 막: 그리기 전에 이 장의 시간대 색으로 덮고 시작(걷히는 건 style.css의 CSS 애니메이션) -->
-<script>(function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var p=location.pathname.split("/").pop()||"index.html",h={"#s3":"#201e1a","#s4":"#f1ede7","#s5":"#f6efe2","#s6":"#fdf5e3"},c={"people.html":"#201e1a","spaces.html":"#f1ede7","objects.html":"#f6efe2"}[p]||(p==="index.html"&&h[location.hash])||"#15130f";d.style.setProperty("--veil",c);d.classList.add("veil-in")})(document.documentElement)</script>
+<script>(function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var p=(location.pathname.split("/").pop()||"index").replace(".html",""),h={"#s3":"#201e1a","#s4":"#f1ede7","#s5":"#f6efe2","#s6":"#fdf5e3"},c={"people":"#201e1a","spaces":"#f1ede7","objects":"#f6efe2"}[p]||(p==="index"&&h[location.hash])||"#15130f";d.style.setProperty("--veil",c);d.classList.add("veil-in")})(document.documentElement)</script>
 <title>2장 사람 · 김고은 — 남윤아 취향 아카이브</title>
 <meta name="description" content="나는 이 사람이 사진마다 다른 사람처럼 보이는데, 웃을 때는 늘 같은 사람이라서 좋다.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">

@@ -90,11 +90,13 @@
 
   // ── 2) 페이지 전환: 떠날 때
   // 도착 페이지(와 그 장)의 시간대 바탕색 — tokens.css의 값과 같다
-  const COLOR = { 'index.html': '#15130f', 'people.html': '#201e1a', 'spaces.html': '#f1ede7', 'objects.html': '#f6efe2' };
+  const COLOR = { index: '#15130f', people: '#201e1a', spaces: '#f1ede7', objects: '#f6efe2' };
   const HASH = { '#s3': '#201e1a', '#s4': '#f1ede7', '#s5': '#f6efe2', '#s6': '#fdf5e3' };
+  // 페이지 이름: 'people.html'(내 컴퓨터)과 '/people'(Netlify가 줄인 주소)을 같은 'people'로 읽는다
+  const pageName = path => (path.split('/').pop() || 'index').replace(/\.html$/, '');
   const colorFor = url => {
-    const page = url.pathname.split('/').pop() || 'index.html';
-    if (page === 'index.html' && HASH[url.hash]) return HASH[url.hash];
+    const page = pageName(url.pathname);
+    if (page === 'index' && HASH[url.hash]) return HASH[url.hash];
     return COLOR[page] || '#15130f';
   };
   if (!reduce) {
@@ -105,8 +107,7 @@
       const url = new URL(a.href, location.href);
       if (url.origin !== location.origin) return;
       if (url.pathname === location.pathname) return;          // 같은 페이지 안 이동(#s2 등)은 그대로
-      const dest = url.pathname.split('/').pop() || 'index.html';
-      if (dest === 'index.html') return;                        // 메인으로 갈 때는 막 없이 바로 (메인에는 전환 막을 쓰지 않는다 — 2026-10-20)
+      if (pageName(url.pathname) === 'index') return;                       // 메인으로 갈 때는 막 없이 바로 (메인에는 전환 막을 쓰지 않는다 — 2026-10-20)
       e.preventDefault();
       root.style.setProperty('--veil', colorFor(url));
       root.classList.remove('veil-in');
