@@ -31,7 +31,7 @@ em { font-style: normal; }
   color: var(--t-ink);
   transition: transform var(--dur-base) var(--ease-inout), color var(--dur-base) var(--ease-inout), background-color var(--dur-base) var(--ease-inout);
 }
-.hd-row { display: flex; justify-content: space-between; align-items: baseline; padding-top: 10px; padding-bottom: 8px; border-bottom: var(--line-width) solid var(--t-line); }
+.hd-row { display: flex; flex-direction: row-reverse; justify-content: space-between;   /* 2026-10-20 학생 요청: 이름 왼쪽 · 장 메뉴 오른쪽 */ align-items: baseline; padding-top: 10px; padding-bottom: 8px; border-bottom: var(--line-width) solid var(--t-line); }
 .hd-nav { display: flex; gap: 1.1em; font-size: .9375rem; line-height: 1.05; letter-spacing: -0.03em; }
 .hd-nav a, .hd-name { transition: color 250ms var(--ease-inout); }
 .hd-nav a:hover, .hd-name:hover { color: var(--color-accent); }
