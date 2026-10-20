@@ -27,11 +27,11 @@
   }), { threshold: [0, .2] });
   reveals.forEach(el => rio.observe(el));
 
-  // ── 블록 올라오기 (.rise): 한 번만
+  // ── 블록 올라오기 (.rise: 글 묶음 — 투명→등장 / .lift: 사진 묶음 — 보이는 채로 약하게): 한 번만
   const bio = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('is-on'); bio.unobserve(e.target); }
   }), { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.rise').forEach(el => reduce ? el.classList.add('is-on') : bio.observe(el));
+  document.querySelectorAll('.rise, .lift').forEach(el => reduce ? el.classList.add('is-on') : bio.observe(el));
 
   // ── 헤더: 내려가면 숨고 올리면 나타남, 조금이라도 내려가면 바탕을 깐다
   const hd = document.querySelector('[data-hd]');
